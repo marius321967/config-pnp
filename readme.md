@@ -1,5 +1,8 @@
 Plug-and-play configuration from .json files and ENV variables.
 
+[![NPM](https://nodei.co/npm/config-pnp.svg)](https://nodei.co/npm/config-pnp/)&nbsp;&nbsp;
+[![Build Status](https://travis-ci.com/marius321967/config-pnp.svg?branch=master)](https://travis-ci.com/marius321967/config-pnp)
+
 ## Example
 
 ```js
