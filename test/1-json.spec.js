@@ -29,6 +29,17 @@ describe('.json config', () => {
         assert.equal(config.get('foo'), 'baz');
     });
 
+    it('Accepts environment override from init()', () => {
+        // Given
+        process.env.NODE_ENV = 'test';
+        config.init({
+            directory: './test/1-json',
+            environment: 'test-env-override'
+        });
+
+        assert.equal(config.get('foo'), 'true-value');
+    });
+
     it('Reads nested values', () => {
         // Given
         process.env.NODE_ENV = 'test-nested';
