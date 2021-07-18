@@ -34,8 +34,15 @@ config.init({
 
 config.get('database.address.host') // "bar.com" - override from environment variable
 config.get('database.address.port') // 3306
-config.get('migrations.enabled') // true - parsed boolean
-config.get('max_connections') // 100 - parsed integer
+config.get('migrations.enabled')    // true - parsed boolean
+config.get('max_connections')       // 100 - parsed integer
+
+// or
+
+config.database.address.host // "bar.com"
+config.database.address.port // 3306
+config.migrations.enabled    // true
+config.max_connections       // 100
 ```
 
 *Note: configuration values are immutable.*
