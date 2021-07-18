@@ -2,7 +2,7 @@ Plug-and-play configuration from .json files and ENV variables.
 
 ## Example
 
-```json
+```js
 // config/config.json or {env}.json
 {
     "database": {
