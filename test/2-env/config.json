@@ -1,0 +1,6 @@
+{
+    "foo": "bar",
+    "some": {
+        "nested_value": { "is": 100 }
+    }
+}
