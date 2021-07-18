@@ -1,6 +1,6 @@
 {
   "name": "config-pnp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Plug & play configuration from .json files and ENV",
   "main": "lib/index.js",
   "scripts": {
