@@ -50,6 +50,14 @@ describe('.json config', () => {
         assert.equal(config.get('foo.bar.baz'), 100);
     });
 
+    it('Returns JSON objects', () => {
+        // Given
+        process.env.NODE_ENV = 'test-nested';
+        config.init({ directory: './test/1-json' });
+
+        assert.deepEqual(config.get('foo'), { bar: { baz: 100 } });
+    });
+
     afterEach(() => {
         process.env = {};
     });
