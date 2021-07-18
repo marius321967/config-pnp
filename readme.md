@@ -27,9 +27,10 @@ MAX_CONNECTIONS=100
 ```js
 const config = require('config-pnp')
 
+// init() is optional: the library will silently initialize using defaults with first configuration retrieval
 config.init({
-    directory: './config',
-    environment: 'dev'
+    directory: './config', // or envvar NODE_CONFIG_DIR. Default: './config'. Absolute or relative
+    environment: 'dev'     // or envvar NODE_ENV. Use null to disable
 })
 
 config.get('database.address.host') // "bar.com" - override from environment variable
@@ -51,11 +52,3 @@ config.max_connections       // 100
 1. config.json
 2. `{env}`.json
 3. Environment variables
-
-## Configuration
-```js
-config.init({
-    directory: './path/to/config', // or envvar NODE_CONFIG_DIR. Default: './config'
-    environment: 'dev' // or envvar NODE_ENV. Use null to disable
-})
-```
