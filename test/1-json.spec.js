@@ -8,11 +8,11 @@ describe('.json config', () => {
         config = new Config();
     });
 
-    it('Loads config.json from custom config_dir', () => {
+    it('Loads config.json from custom directory', () => {
         // Given
         // NODE_ENV missing
         config.init({
-            config_dir: './test/1-json'
+            directory: './test/1-json'
         });
 
         assert.equal(config.get('foo'), 'bar');
@@ -23,7 +23,7 @@ describe('.json config', () => {
         // Given
         process.env.NODE_ENV = 'test';
         config.init({
-            config_dir: './test/1-json'
+            directory: './test/1-json'
         });
 
         assert.equal(config.get('foo'), 'baz');
@@ -33,7 +33,7 @@ describe('.json config', () => {
         // Given
         process.env.NODE_ENV = 'test-nested';
         config.init({
-            config_dir: './test/1-json'
+            directory: './test/1-json'
         });
 
         assert.equal(config.get('foo.bar.baz'), 100);

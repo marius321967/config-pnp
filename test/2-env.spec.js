@@ -13,7 +13,7 @@ describe('Environment variable config', () => {
         // Given
         process.env.FOO = 'baz';
         config.init({
-            config_dir: './test/2-env'
+            directory: './test/2-env'
         });
 
         assert.equal(config.get('foo'), 'baz');
@@ -23,7 +23,7 @@ describe('Environment variable config', () => {
         // Given
         process.env.SOME_NESTED_VALUE_IS = 'foobarbaz';
         config.init({
-            config_dir: './test/2-env'
+            directory: './test/2-env'
         });
 
         assert.equal(config.get('some.nested_value.is'), 'foobarbaz');
@@ -32,7 +32,7 @@ describe('Environment variable config', () => {
     it('Converts integers from environment', () => {
         // Given
         process.env.MAX_CONNECTIONS = '100';
-        config.init({ config_dir: './test/2-env' });
+        config.init({ directory: './test/2-env' });
 
         assert.equal(config.get('max_connections'), 100);
     });
@@ -40,7 +40,7 @@ describe('Environment variable config', () => {
     it('Converts floats from environment', () => {
         // Given
         process.env.COEFFICIENT = '3.14';
-        config.init({ config_dir: './test/2-env' });
+        config.init({ directory: './test/2-env' });
 
         assert.equal(config.get('coefficient'), 3.14);
     });
@@ -49,7 +49,7 @@ describe('Environment variable config', () => {
         // Given
         process.env.BACKUPS_ENABLED = 'true';
         process.env.LOGGING_ENABLED = 'false';
-        config.init({ config_dir: './test/2-env' });
+        config.init({ directory: './test/2-env' });
 
         assert.equal(config.get('backups.enabled'), true, 'backups.enabled must be true');
         assert.equal(config.get('logging.enabled'), false, 'logging.enabled must be false');
