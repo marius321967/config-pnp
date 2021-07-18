@@ -15,4 +15,5 @@ deploy:
     tags: true
     repo: marius321967/config-pnp
     branch: master
+    node: 16
   skip_cleanup: 'true'
