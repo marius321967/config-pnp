@@ -27,7 +27,7 @@ MAX_CONNECTIONS=100
 ```js
 const config = require('config-pnp')
 
-// init() is optional: the library will silently initialize using defaults with first configuration retrieval
+// init() is optional: the library will silently initialize upon first configuration retrieval
 config.init({
     directory: './config', // or envvar NODE_CONFIG_DIR. Default: './config'. Absolute or relative
     environment: 'dev'     // or envvar NODE_ENV. Use null to disable
@@ -40,10 +40,17 @@ config.get('max_connections')       // 100 - parsed integer
 
 // or
 
-config.database.address.host // "bar.com"
-config.database.address.port // 3306
-config.migrations.enabled    // true
-config.max_connections       // 100
+config['database.address.host']
+config['database.address.port']
+config['migrations.enabled']
+config['max_connections']
+
+// or (not recommended: environment variables will be unavailable for nested objects)
+
+config.database.address.host
+config.database.address.port
+config.migrations.enabled
+config.max_connections
 ```
 
 *Note: configuration values are immutable.*
